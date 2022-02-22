@@ -21,7 +21,8 @@ contract B is A {
     // function getContractName() public pure override(A) returns (string memory) {
     //     return "B";
     // }
-    constructor() A("This is B"){
+    // constructor() A("This is B"){
+    constructor(string memory _name) A(_name){
 
     }
 }
