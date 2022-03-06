@@ -39,4 +39,14 @@ contract Struct {
         return (todo.task, todo.completed);
 
     }
+
+    function setTask(uint _index, string memory _task) public {
+        Todo storage todo = todoList[_index];
+        todo.task = _task;
+    }
+
+    function toggleCompleted(uint _index) public {
+        Todo storage todo = todoList[_index];
+        todo.completed = !todo.completed;
+    }
 }
