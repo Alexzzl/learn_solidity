@@ -3,6 +3,8 @@
 pragma solidity ^0.8.4;
 
 contract GlobalVariables {
+    event LOG(address, uint);
+
     function getGasInfo() public view returns (uint, uint) {
         return (tx.gasprice, block.gaslimit);
     }
@@ -16,7 +18,7 @@ contract GlobalVariables {
         block.timestamp);
     }
 
-    // function getMessageInfo() public payable returns (address, uint) { 
-    //     return (msg.sender, msg.value);        
-    // }
+    function getMessageInfo() public payable{ 
+        emit LOG(msg.sender, msg.value);
+    }
 }
